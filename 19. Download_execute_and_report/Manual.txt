@@ -1,0 +1,4 @@
+Download 32 bits of lazagne using the link provided
+----- how to use lazagne ----
+laZagne_x86.exe --help ----> for help
+laZagne_x86.exe browser ----> to extract passwords stored in browser

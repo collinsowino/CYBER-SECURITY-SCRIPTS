@@ -1,0 +1,23 @@
+apt-get update
+
+apt-get install terminator
+sudo apt-get install gedit
+pip3 install scapy-python3
+pip install scapy_http
+pip install pynput
+apt-get install libnetfilter-queue-dev
+pip install netfilterqueue
+
+
+------ Windows -------
+install python 2.7.14
+
+
+------ How to install libraries in windows -------
+C:\Python27\python.exe -m pip install scapy
+
+
+---- HOW TO RUN PYTHON IN WINDOWS-----
+-cmd
+- cd downloas
+- c:\Python27\python.exe arp_spoof.py

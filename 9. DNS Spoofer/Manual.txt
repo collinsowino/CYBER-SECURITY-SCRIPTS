@@ -1,0 +1,16 @@
+1. run DNS_spoofer in your local machine.
+	1 - iptables -I OUTPUT -j NFQUEUE --queue-num 0
+	- iptables -I INPUT -j NFQUEUE --queue-num 0
+	2. run DNS_spoofer.py
+	3. ping -c 1 www.bing.com
+        4. start your apache by service apache2 start
+	5.  last run  iptables --flush
+
+2. run DNS_spoofer in remote computer
+	1. run DNS_spoofer.py
+	2. run iptables --flush
+	3. iptables -I INPUT -j NFQUEUE --queue-num 0
+	4. ping -c 1 www.bing.com
+        5. start your apache by service apache2 start
+	6. run python ARP_Spoof.py
+		

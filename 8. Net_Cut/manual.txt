@@ -1,0 +1,9 @@
+1. first run the iptables
+    iptables -I FORWORD -j NFQUEUE --queue-num 0
+
+2. run python arp_spoofer.py 
+----- ensure to enable port forwading fist then run arp_spoofer.py--------
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+3. run net_cut.py
+4. last run  iptables --flush
